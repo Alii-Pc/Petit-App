@@ -1,0 +1,238 @@
+.footer {
+  background-color: #252423;
+  color: white;
+  font-family: var(--font-base);
+  padding: 60px 0 30px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.logoColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 24px;
+}
+
+.description {
+  color: #96938d;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.columnTitle {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.newsletterText {
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: white;
+  color: #000;
+  border-radius: 4px 0 0 4px;
+  font-family: var(--font-base);
+  font-size: 15px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.subscribeBtn {
+  padding: 12px 24px;
+  background: #2b71de;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--font-base);
+  font-size: 15px;
+  transition: background-color 0.2s;
+}
+
+.subscribeBtn:hover {
+  background: #1b5abc;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.termsText {
+  font-size: 13px;
+  color: white;
+  line-height: 1.5;
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bottomLeft {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.localeSelectors {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.flag {
+  font-size: 18px;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialLink {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.socialLink:hover {
+  opacity: 0.7;
+}
+
+.bottomRight {
+  display: flex;
+  align-items: center;
+}
+
+.paymentIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.paymentIcon {
+  width: 38px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 1;
+}
+
+.mastercardOverlay {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.8);
+  position: absolute;
+  left: 8px;
+}
+.mastercardOverlay::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 200, 0, 0.8);
+  position: absolute;
+  left: 8px;
+}
+
+@media (max-width: 992px) {
+  .topSection {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .topSection {
+    grid-template-columns: 1fr;
+  }
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

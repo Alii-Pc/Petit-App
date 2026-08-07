@@ -1,0 +1,345 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Rich Text Sections */
+.richText {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.richTextHeading {
+  font-size: 48px;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  line-height: 1.1;
+}
+
+.richTextBody {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #96938d;
+  line-height: 1.6;
+}
+
+/* Blur Banner */
+.blurBanner {
+  position: relative;
+  padding: 100px 20px;
+  overflow: hidden;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+}
+
+.blurBannerBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.blurOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.blurContent {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.blurLabel {
+  font-family: var(--font-headline);
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.blurDesc {
+  font-size: 17px;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+.blurFeatures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.blurFeature h3 {
+  color: white;
+  font-size: 20px;
+  margin: 16px 0 10px;
+}
+
+.blurFeature p {
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+.btnPrimary {
+  display: inline-block;
+  background-color: var(--color-button-primary-bg);
+  color: var(--color-button-primary-text);
+  padding: 16px 36px;
+  border-radius: var(--border-radius-button);
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-button-primary-bg-hover);
+  transform: translateY(-1px);
+}
+
+/* Scrolly Product Grid */
+.scrollySection {
+  padding: 80px 20px;
+}
+
+.scrollyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.scrollyCard {
+  text-align: center;
+}
+
+.scrollyImageWrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.scrollyCard h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.scrollyCard p {
+  font-size: 15px;
+  color: #96938d;
+  line-height: 1.5;
+}
+
+/* Compare Section */
+.compareIntro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.compareLabel {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #96938d;
+  font-weight: 500;
+}
+
+.compareSection {
+  padding: 0 20px 80px;
+}
+
+.compareTable {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.compareHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 24px;
+  background: var(--color-teaser-background);
+  text-align: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.compareRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  align-items: center;
+}
+
+.compareFeatureLabel {
+  text-align: left;
+  font-weight: 500;
+}
+
+.compareCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buy CTA */
+.buyCta {
+  padding: 40px 20px 80px;
+}
+
+.guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #96938d;
+}
+
+/* Teaser Section (Peace of Mind) */
+.teaserSection {
+  display: flex;
+  min-height: 700px;
+}
+
+.teaserImage {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+}
+
+.teaserContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 8%;
+  background: var(--color-teaser-background);
+}
+
+.teaserContent h2 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.teaserContent > p {
+  font-size: 16px;
+  color: #96938d;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.specList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.specList li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 15px;
+}
+
+/* App Section */
+.appSection {
+  position: relative;
+  padding: 100px 20px;
+  overflow: hidden;
+  min-height: 800px;
+}
+
+.appBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.appContent {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.appDesc {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 16px auto 60px;
+  opacity: 0.85;
+}
+
+.appScreens {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.appScreen {
+  text-align: center;
+}
+
+.appScreen h3 {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .richTextHeading {
+    font-size: 32px;
+  }
+
+  .blurFeatures {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .scrollyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .teaserSection {
+    flex-direction: column;
+  }
+
+  .appScreens {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blurLabel {
+    font-size: 28px;
+  }
+
+  .teaserContent h2 {
+    font-size: 32px;
+  }
+}
