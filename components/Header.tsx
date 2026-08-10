@@ -37,7 +37,7 @@ export default function Header() {
           <div className={styles.logo}>
             <Link href="/">
               <Image
-                src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/petit_logo.svg?v=1774878948&width=90"
+                src="/images/petit-logo.svg"
                 alt="Petit"
                 width={90}
                 height={37}

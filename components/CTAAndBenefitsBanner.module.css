@@ -1,0 +1,139 @@
+.sectionWrap {
+  width: 100%;
+}
+
+/* Top Gradient CTA Banner */
+.bannerSection {
+  width: 100%;
+  padding: 100px 24px 110px;
+  background: linear-gradient(135deg, #d8ae83 0%, #3483be 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ratingEyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 20px;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.starsRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.bannerTitle {
+  font-size: clamp(38px, 5.2vw, 64px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+  font-family: var(--font-syne), var(--font-headline), sans-serif;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bannerSubtitle {
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 580px;
+  margin: 0 auto 36px;
+  font-family: var(--font-outfit), var(--font-base), sans-serif;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 42px;
+  background-color: #257bf3;
+  color: #ffffff;
+  font-size: 15.5px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(37, 123, 243, 0.4);
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  font-family: var(--font-syne), var(--font-headline), sans-serif;
+}
+
+.ctaBtn:hover {
+  background-color: #1963d2;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37, 123, 243, 0.5);
+}
+
+/* Bottom Benefits Marquee Strip */
+.marqueeStrip {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 18px 0;
+  border-top: 1px solid #eee8e0;
+  border-bottom: 1px solid #eee8e0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: max-content;
+  animation: marqueeBenefits 30s linear infinite;
+}
+
+@keyframes marqueeBenefits {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+.benefitItem {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #494742;
+  white-space: nowrap;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.bullet {
+  color: #c4beb4;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .bannerSection {
+    padding: 70px 20px 80px;
+  }
+
+  .bannerTitle {
+    font-size: 34px;
+  }
+
+  .ctaBtn {
+    padding: 13px 32px;
+    font-size: 14.5px;
+  }
+}

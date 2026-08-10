@@ -11,7 +11,7 @@ export default function Footer() {
           <div className={styles.logoColumn}>
             <Link href="/">
               <Image
-                src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/petit_logo-white.svg?v=1774878937&width=750"
+                src="/images/petit-logo-white.svg"
                 alt="Petit Logo"
                 width={120}
                 height={40}

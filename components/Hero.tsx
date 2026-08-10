@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background image (right side) */}
       <div className={styles.imageHalf}>
         <Image
-          src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/petit-main-hero-desktop-4.jpg?v=1774878924&width=3840"
+          src="/images/hero-bg.jpg"
           alt="Baby with Petit monitor"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -25,7 +25,7 @@ export default function Hero() {
         {/* Rating */}
         <div className={styles.rating}>
           <Image
-            src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/star-2-petit.png?v=1774878938&width=146"
+            src="/images/star-rating.png"
             alt="Stars"
             width={100}
             height={18}
@@ -39,15 +39,15 @@ export default function Hero() {
         {/* Feature bullets */}
         <ul className={styles.features}>
           <li>
-            <Image src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/tick-petit.png?v=1774878949&width=46" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
+            <Image src="/images/tick-petit.png" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
             <span>Monitor your baby even when you&apos;re away</span>
           </li>
           <li>
-            <Image src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/tick-petit.png?v=1774878949&width=46" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
+            <Image src="/images/tick-petit.png" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
             <span>Private, secure streaming you can trust</span>
           </li>
           <li>
-            <Image src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/tick-petit.png?v=1774878949&width=46" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
+            <Image src="/images/tick-petit.png" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
             <span>Parent-friendly from first use</span>
           </li>
         </ul>
@@ -60,7 +60,7 @@ export default function Hero() {
         {/* Guarantee */}
         <div className={styles.guarantee}>
           <Image
-            src="https://wonder-theme-petit-demo.myshopify.com/cdn/shop/files/calendar-heart.png?v=1774878949&width=36"
+            src="/images/calendar-heart.png"
             alt=""
             width={18}
             height={18}

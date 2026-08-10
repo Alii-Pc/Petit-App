@@ -1,0 +1,1 @@
+const fs = require('fs'); const cheerio = require('cheerio'); const html = fs.readFileSync('shopify.html', 'utf-8'); const $ = cheerio.load(html); $('script, style, nav, footer, header, meta, link, svg').remove(); const text = $('body').text().replace(/\s+/g, ' ').trim(); console.log(text.substring(0, 5000));

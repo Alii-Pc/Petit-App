@@ -1,0 +1,156 @@
+.intro {
+  min-height: 44vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px 48px;
+  text-align: center;
+  color: #292929;
+  background: #ffffff;
+}
+
+.introContent {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #d8aa78;
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: var(--font-syne), var(--font-headline), sans-serif;
+}
+
+.eyebrow span {
+  color: #257bf3;
+}
+
+.intro h1 {
+  margin: 0 0 20px;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #383430;
+  font-family: var(--font-syne), var(--font-headline), sans-serif;
+}
+
+.introCopy {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.55;
+  color: #6e6b65;
+  font-family: var(--font-outfit), var(--font-base), sans-serif;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: #257bf3;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(37, 123, 243, 0.3);
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  font-family: var(--font-syne), var(--font-headline), sans-serif;
+}
+
+.button:hover {
+  background: #1963d2;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 123, 243, 0.42);
+}
+
+/* 5 screen-heights defines the scroll duration; sticky keeps the scene in place. */
+.story { position:relative; height:500vh; background:#fff; }
+.sticky { position:sticky; top:0; height:100vh; height:100dvh; overflow:hidden; }
+.visual { position:absolute; inset:0; display:grid; place-items:center; padding-top:15vh; }
+.canvas { width:100%; height:100%; max-height:70vh; object-fit:contain; }
+.video { display:none; }
+.content { position:absolute; inset:0; pointer-events:none; }
+.card { position:absolute; top:50%; width:min(390px,28vw); opacity:0; visibility:hidden; transform:translateY(60px); transition:opacity .5s ease, visibility .5s, transform .8s cubic-bezier(.2,1,.3,1); pointer-events:auto; }
+.left { left:5%; text-align:left; }
+.right { right:5%; text-align:right; }
+.card.active { opacity:1; visibility:visible; transform:translateY(-50%); }
+.card.past:not(.active) { opacity:0; transform:translateY(-120%); }
+.card h2 { margin:0 0 16px; font-size:clamp(21px,2.1vw,36px); line-height:1.06; letter-spacing:-.05em; color:#292929; }
+.card p { margin:0; color:#343434; font-size:clamp(13px,1vw,16px); line-height:1.5; }
+.card strong { font-weight:750; }
+
+/* Bottom Stats Section */
+.statsWrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 60px 24px 80px;
+}
+
+.statsContainer {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 48px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: clamp(38px, 4.5vw, 54px);
+  font-weight: 700;
+  color: #494742;
+  margin-bottom: 8px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-family: var(--font-syne), var(--font-headline), sans-serif;
+}
+
+.statText {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #6e6b65;
+  max-width: 280px;
+  margin: 0 auto;
+  font-family: var(--font-outfit), var(--font-base), sans-serif;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width:700px) {
+  .intro { min-height: 32vh; padding: 40px 16px 28px; }
+  .eyebrow { font-size: 26px; }
+  .intro h1 { font-size: 32px; }
+  .introCopy { font-size: 14px; max-width: 100%; }
+  .button { min-height: 42px; font-size: 14px; padding: 0 24px; }
+  .canvas { width:125%; height:125%; max-height:none; }
+  .card, .left, .right { bottom:8vh; left:50%; right:auto; top:auto; width:85%; text-align:center; transform:translate(-50%,40px); }
+  .card.active { transform:translate(-50%,0); }
+  .card.past:not(.active) { transform:translate(-50%,-100px); }
+  .card h2 { font-size:25px; } .card p { font-size:14px; }
+}
+@media (prefers-reduced-motion:reduce) { .card { transition:none; } }

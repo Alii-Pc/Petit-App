@@ -1,8 +1,10 @@
+@import "tailwindcss";
+
 :root {
   --font-base: var(--font-outfit), sans-serif;
   --font-headline: var(--font-syne), sans-serif;
 
-  --color-background: #f9f6f2;
+  --color-background: #ffffff;
   --color-text: #494742;
   --color-headings: #494742;
   --color-border: #ece8e3;

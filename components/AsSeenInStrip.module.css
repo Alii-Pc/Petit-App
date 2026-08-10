@@ -1,0 +1,57 @@
+.wrapper {
+  width: 100%;
+  background-color: #f9f6f2;
+  padding: 24px 0 20px;
+  text-align: center;
+  border-bottom: 1px solid #efe8df;
+  overflow: hidden;
+}
+
+.label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #7a7770;
+  margin-bottom: 16px;
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.marqueeWrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: marqueeLogos 40s linear infinite;
+}
+
+@keyframes marqueeLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+.logoItem {
+  font-size: 16px;
+  font-weight: 700;
+  color: #8c8880;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  font-family: var(--font-syne), var(--font-headline), serif;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.logoItem:hover {
+  opacity: 1;
+  color: #494742;
+}
