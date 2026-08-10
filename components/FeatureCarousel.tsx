@@ -12,7 +12,7 @@ const featuresData = [
     fullTitle: 'Capture Every Precious Moment',
     description: "The little things become the biggest memories. Save milestones, create highlight clips, and share your baby's sweetest moments — effortlessly.",
     image: '/images/photo-1.jpg',
-    drawerImage: '/images/drawer-1.jpg',
+    drawerImage: '/images/photo-1.jpg',
     textWhite: true,
   },
   {
@@ -21,7 +21,7 @@ const featuresData = [
     fullTitle: 'Always Stay Connected',
     description: 'Stay close to your baby — wherever you are. Real-time monitoring, intelligent alerts, and privacy-first security help you feel connected without constantly checking.',
     image: '/images/iphone-cam.jpg',
-    drawerImage: '/images/drawer-2.jpg',
+    drawerImage: '/images/iphone-cam.jpg',
     textWhite: false,
   },
   {

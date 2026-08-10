@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   background: linear-gradient(180deg, #342f2a 0%, #24201c 100%);
-  padding: 60px 0 0;
+  padding: 0;
   color: #ffffff;
   overflow: hidden;
   position: relative;
@@ -11,44 +11,6 @@
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-}
-
-/* Header Typography */
-.header {
-  text-align: center;
-  margin-bottom: 36px;
-  padding: 0 20px;
-}
-
-.eyebrow {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.6px;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 10px;
-  text-transform: none;
-  font-family: var(--font-outfit, sans-serif);
-}
-
-.title {
-  font-size: clamp(34px, 4.8vw, 56px);
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-  font-family: var(--font-syne, sans-serif);
-}
-
-.mobileBreak {
-  display: none;
-}
-
-.highlightBronze {
-  color: #d8aa78;
-}
-
-.highlightBlue {
-  color: #257bf3;
 }
 
 /* Visual Wrapper - Full Screen Width */
@@ -63,6 +25,48 @@
   position: relative;
   width: 100%;
   overflow: visible;
+}
+
+/* Header Text Overlayed on Top Center - Compact, Single Line, No Room Overlap */
+.header {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  text-align: center;
+  width: auto;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 3px;
+  font-family: var(--font-outfit, sans-serif);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.title {
+  font-size: clamp(16px, 2.2vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: var(--font-syne, sans-serif);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+}
+
+.highlightBronze {
+  color: #d8aa78;
+}
+
+.highlightBlue {
+  color: #257bf3;
 }
 
 .roomImage {
@@ -108,7 +112,7 @@
   transform: rotate(45deg);
 }
 
-/* Pulsing Ring Animation around Hotspot Pins */
+/* Pulsing Ring Animation */
 .pulseRing {
   position: absolute;
   top: -6px;
@@ -246,23 +250,26 @@
   background: #1963d2;
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 768px) {
-  .section {
-    padding: 40px 0 0;
+/* Responsive */
+@media (max-width: 900px) {
+  .header {
+    top: 8px;
   }
 
-  .mobileBreak {
-    display: inline;
+  .eyebrow {
+    font-size: 10px;
+    margin-bottom: 1px;
   }
 
   .title {
-    font-size: 32px;
+    font-size: 18px;
   }
+}
 
+@media (max-width: 768px) {
   .hotspotPin {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
   }
 
   .popoverCard {

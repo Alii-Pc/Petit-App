@@ -83,20 +83,20 @@ export default function ShoppableRoomSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container} ref={containerRef}>
-        {/* Header Text */}
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>Because Every Moment Matters</p>
-          <h2 className={styles.title}>
-            Designed for <br className={styles.mobileBreak} />
-            <span className={styles.highlightBronze}>Peaceful</span>{' '}
-            <span className={styles.highlightBlue}>Nights</span>
-          </h2>
-        </div>
-
         {/* Isometric Visual Container */}
         <div className={styles.visualWrapper}>
-          {/* Main 3D Home Cutaway Background Image (Cleaned without pre-baked camera circle) */}
           <div className={styles.imageContainer}>
+            {/* Header Text Overlayed cleanly on Top Center without overlapping room */}
+            <div className={styles.header}>
+              <p className={styles.eyebrow}>Because Every Moment Matters</p>
+              <h2 className={styles.title}>
+                Designed for{' '}
+                <span className={styles.highlightBronze}>Peaceful</span>{' '}
+                <span className={styles.highlightBlue}>Nights</span>
+              </h2>
+            </div>
+
+            {/* Main 3D Home Cutaway Background Image */}
             <Image
               src="/images/petit-shoppable-image-desktop.webp"
               alt="Designed for Peaceful Nights - Petit Smart Home Room Layout"
@@ -159,7 +159,6 @@ export default function ShoppableRoomSection() {
                 </Link>
               </div>
             )}
-
           </div>
         </div>
       </div>
