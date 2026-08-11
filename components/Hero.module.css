@@ -76,36 +76,14 @@
   color: var(--color-text);
 }
 
-/* CTA Button */
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-button-primary-bg);
-  color: white;
-  padding: 16px 32px;
-  border-radius: var(--border-radius-button);
-  font-family: var(--font-headline);
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
-  width: fit-content;
+/* CTA Spacing */
+.ctaButtonSpacing {
   margin-bottom: 20px;
 }
 
-.ctaButton:hover {
-  background-color: var(--color-button-primary-bg-hover);
-  transform: translateY(-1px);
-}
-
-/* Guarantee */
-.guarantee {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--color-text);
+/* Guarantee Spacing */
+.guaranteeSpacing {
+  justify-content: flex-start;
   opacity: 0.6;
 }
 

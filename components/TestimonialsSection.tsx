@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { Button } from '@/components/ui/Button';
 import styles from './TestimonialsSection.module.css';
 
 interface ReviewItem {
@@ -52,36 +53,36 @@ export default function TestimonialsSection() {
     <section className={styles.section}>
       <div className={styles.container}>
         {/* Header Block */}
-        <div className={styles.header}>
-          <div className={styles.eyebrow}>
-            <div className={styles.starsRow}>
-              {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="#e5a93c"
-                  stroke="#e5a93c"
-                  strokeWidth="1"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-              ))}
-            </div>
-            <span>5-Star Reviews</span>
-          </div>
-
-          <h2 className={styles.title}>
-            Loved by <br />
-            <span className={styles.highlightTan}>Modern</span>{' '}
-            <span className={styles.highlightBlue}>Parents</span>
-          </h2>
-
-          <p className={styles.subtitle}>
-            Real stories from families who sleep better knowing their baby is safe.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow={
+            <>
+              <div className={styles.starsRow}>
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="#e5a93c"
+                    stroke="#e5a93c"
+                    strokeWidth="1"
+                  >
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
+              </div>
+              <span>5-Star Reviews</span>
+            </>
+          }
+          title={
+            <>
+              Loved by <br />
+              <span className={styles.highlightTan}>Modern</span>{' '}
+              <span className={styles.highlightBlue}>Parents</span>
+            </>
+          }
+          subtitle="Real stories from families who sleep better knowing their baby is safe."
+        />
       </div>
 
       {/* Infinite Marquee Slider Wrap */}
@@ -129,9 +130,9 @@ export default function TestimonialsSection() {
 
       {/* Bottom Action Button */}
       <div className={styles.btnWrap}>
-        <Link href="/reviews" className={styles.reviewsBtn}>
+        <Button href="/reviews" variant="secondary">
           See all Parent Reviews
-        </Link>
+        </Button>
       </div>
     </section>
   );

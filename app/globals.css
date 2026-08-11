@@ -4,7 +4,7 @@
   --font-base: var(--font-outfit), sans-serif;
   --font-headline: var(--font-syne), sans-serif;
 
-  --color-background: #ffffff;
+  --color-background: #f9f6f2;
   --color-text: #494742;
   --color-headings: #494742;
   --color-border: #ece8e3;
@@ -17,9 +17,12 @@
   --color-button-primary-bg: #2b71de;
   --color-button-primary-text: #ffffff;
   --color-button-primary-bg-hover: #1b5abc;
+  
   --color-button-secondary-bg: #ffffff;
   --color-button-secondary-text: #494742;
   --color-button-secondary-border: #d6d6d6;
+  --color-button-secondary-text-hover: #ffffff;
+  --color-button-secondary-bg-hover: #2364c9;
 
   --color-sale-price: #b72f2f;
   --color-star-rating: #fcc97e;

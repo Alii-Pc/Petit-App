@@ -1,0 +1,217 @@
+/* ===== Global Container ===== */
+.container {
+  font-family: var(--font-outfit, sans-serif);
+  background-color: #F9F6F2;
+  overflow: hidden;
+}
+
+/* ===== Hero Video ===== */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  max-height: 900px;
+  overflow: hidden;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.heroTitle {
+  font-family: var(--font-syne, sans-serif);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.heroSubtitle {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Our Mission ===== */
+.missionSection {
+  background: linear-gradient(137deg, rgba(217, 174, 131, 1), rgba(215, 192, 168, 1) 21%, rgba(164, 179, 200, 1) 42%, rgba(41, 111, 163, 1) 93%);
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.missionContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.missionTitle {
+  font-family: var(--font-syne, sans-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.missionText {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ===== Full Width Image ===== */
+.fullImageSection {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fullImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== Features Split Sections ===== */
+.featuresWrap {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.featureRow {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.featureRowReverse {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-direction: row-reverse;
+}
+
+.featureImageWrap {
+  flex: 1;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.featureImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.featureImage:hover {
+  transform: scale(1.03);
+}
+
+.featureTextWrap {
+  flex: 1;
+  padding: 20px;
+}
+
+.featureText {
+  font-family: var(--font-syne, sans-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+/* ===== Awards Marquee ===== */
+.marqueeSection {
+  background-color: #F4EEDA;
+  padding: 60px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.marqueeTitle {
+  font-family: var(--font-syne, sans-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.marqueeTrackWrap {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: inline-flex;
+  gap: 80px;
+  align-items: center;
+  padding-left: 80px;
+  animation: scroll 25s linear infinite;
+}
+
+.badgeImg {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 40px)); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .featureRow, .featureRowReverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .featuresWrap {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+  
+  .featureText {
+    text-align: center;
+  }
+}

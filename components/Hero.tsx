@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+import { GuaranteeBadge } from '@/components/ui/GuaranteeBadge';
+import { Icon } from '@/components/ui/Icon';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -39,34 +41,26 @@ export default function Hero() {
         {/* Feature bullets */}
         <ul className={styles.features}>
           <li>
-            <Image src="/images/tick-petit.png" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
+            <Icon name="tick-petit" size={22} />
             <span>Monitor your baby even when you&apos;re away</span>
           </li>
           <li>
-            <Image src="/images/tick-petit.png" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
+            <Icon name="tick-petit" size={22} />
             <span>Private, secure streaming you can trust</span>
           </li>
           <li>
-            <Image src="/images/tick-petit.png" alt="" width={22} height={22} style={{ width: 'auto', height: 'auto' }} />
+            <Icon name="tick-petit" size={22} />
             <span>Parent-friendly from first use</span>
           </li>
         </ul>
 
         {/* CTA */}
-        <Link href="/products/petit" className={styles.ctaButton}>
+        <Button href="/products/petit" className={styles.ctaButtonSpacing}>
           Discover Smarter Monitoring
-        </Link>
+        </Button>
 
         {/* Guarantee */}
-        <div className={styles.guarantee}>
-          <Image
-            src="/images/calendar-heart.png"
-            alt=""
-            width={18}
-            height={18}
-          />
-          <span>30 days to love it or your money back</span>
-        </div>
+        <GuaranteeBadge className={styles.guaranteeSpacing} />
       </div>
     </section>
   );
