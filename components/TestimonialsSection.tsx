@@ -5,48 +5,10 @@ import Image from 'next/image';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Button } from '@/components/ui/Button';
 import styles from './TestimonialsSection.module.css';
-
-interface ReviewItem {
-  id: number;
-  title: string;
-  text: string;
-  author: string;
-  avatar: string;
-}
-
-const reviewsData: ReviewItem[] = [
-  {
-    id: 1,
-    title: 'A Must-Have for New Parents',
-    text: 'This monitor gave us confidence from day one. The picture is sharp, the app is smooth, and it just works when you need it most.',
-    author: '- Mark R., verified parent',
-    avatar: '/images/pic-3.jpg',
-  },
-  {
-    id: 2,
-    title: 'Worth Every Penny',
-    text: 'We’ve tried other baby monitors, but PETIT stands out. Reliable performance, modern design, and real peace of mind.',
-    author: '- Michael T., verified parent',
-    avatar: '/images/pic-4.jpg',
-  },
-  {
-    id: 3,
-    title: 'Finally, Peace of Mind at Night',
-    text: 'The video quality is incredibly clear and the connection is always stable. I can finally relax knowing my baby is safe, even when I’m not in the room.',
-    author: '- Anna M., verified parent',
-    avatar: '/images/pic-1.jpg',
-  },
-  {
-    id: 4,
-    title: 'Simple, Reliable, and Beautifully Designed',
-    text: 'PETIT was so easy to set up and fits perfectly into our home. It does exactly what we need — no stress, no complicated settings.',
-    author: '- Marta L., verified parent',
-    avatar: '/images/pic-2.jpg',
-  },
-];
+import { homeTestimonials } from '@/data/home';
 
 // Duplicate list for infinite smooth marquee scrolling
-const marqueeList = [...reviewsData, ...reviewsData, ...reviewsData];
+const marqueeList = [...homeTestimonials, ...homeTestimonials, ...homeTestimonials];
 
 export default function TestimonialsSection() {
   return (

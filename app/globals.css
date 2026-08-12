@@ -18,11 +18,11 @@
   --color-button-primary-text: #ffffff;
   --color-button-primary-bg-hover: #1b5abc;
   
-  --color-button-secondary-bg: #ffffff;
-  --color-button-secondary-text: #494742;
-  --color-button-secondary-border: #d6d6d6;
+  --color-button-secondary-bg: transparent;
+  --color-button-secondary-text: #2b71de;
+  --color-button-secondary-border: #2b71de;
   --color-button-secondary-text-hover: #ffffff;
-  --color-button-secondary-bg-hover: #2364c9;
+  --color-button-secondary-bg-hover: #2b71de;
 
   --color-sale-price: #b72f2f;
   --color-star-rating: #fcc97e;

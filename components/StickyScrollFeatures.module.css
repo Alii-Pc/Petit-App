@@ -1,0 +1,177 @@
+.section {
+  width: 100%;
+  background-color: #f9f6f2; /* Wonder Theme cream background */
+  position: relative;
+}
+
+.stickyViewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Lock the viewport so nothing spills out */
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  height: 100%; /* Take full height of viewport */
+}
+
+/* Left Column: Fixed Size Image */
+.stickyCol {
+  flex: 1;
+  height: calc(100vh - 200px); /* Height of the image frame */
+  min-height: 400px;
+  max-height: 700px;
+}
+
+.stickyImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 1.2s ease-out;
+  transform: scale(1.05); /* Slight zoom-out effect on reveal */
+}
+
+.imageWrapActive {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Right Column: Moving Text Track */
+.scrollCol {
+  flex: 1;
+  height: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.textTrack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Height is managed by children dynamically, but we want it to be 100vh per child */
+  display: flex;
+  flex-direction: column;
+}
+
+.textBlock {
+  height: 100vh; /* Each block is exactly the height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+  opacity: 0.3; /* Fade out inactive blocks */
+  padding-right: 40px;
+}
+
+.textBlockActive {
+  opacity: 1; /* Highlight active block */
+}
+
+.title {
+  font-family: var(--font-syne, sans-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-headings, #494742);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  font-family: var(--font-outfit, sans-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6e6b65;
+}
+
+.mobileImageWrap {
+  display: none;
+}
+
+/* Responsive: Disable scrolljacking on mobile and fall back to standard stacked layout */
+@media (max-width: 900px) {
+  .section {
+    height: auto !important; /* Override inline height */
+    padding: 60px 20px;
+  }
+  
+  .stickyViewport {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .container {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .stickyCol {
+    display: none; /* Hide desktop sticky left column */
+  }
+  
+  .scrollCol {
+    height: auto;
+  }
+  
+  .textTrack {
+    position: relative;
+    transform: none !important; /* Override Framer Motion */
+  }
+  
+  .textBlock {
+    height: auto;
+    opacity: 1;
+    margin-bottom: 60px;
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .mobileImageWrap {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+}

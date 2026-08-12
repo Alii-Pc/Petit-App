@@ -1,0 +1,130 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  background-color: #f9f6f2; /* Wonder Theme cream background */
+}
+
+.stickyViewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Hide horizontal overflow so it doesn't break page width */
+  display: flex;
+  align-items: center;
+}
+
+.horizontalTrack {
+  display: flex;
+  height: 100%;
+  /* We let the flex items stretch implicitly */
+}
+
+.featureCard {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0; /* Important: Prevents cards from squishing together */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.cardInner {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cardInnerReverse {
+  flex-direction: row-reverse;
+}
+
+.imageColumn {
+  flex: 1;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.textColumn {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.title {
+  font-family: var(--font-syne, sans-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-headings, #494742);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  font-family: var(--font-outfit, sans-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6e6b65;
+}
+
+/* Mobile Fallback: Disable horizontal scrolljacking and stack vertically */
+@media (max-width: 900px) {
+  .carouselContainer {
+    height: auto !important; /* Override the React inline style scroll height */
+    padding: 60px 0;
+  }
+  
+  .stickyViewport {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .horizontalTrack {
+    flex-direction: column;
+    transform: none !important; /* Override Framer Motion inline transform */
+    gap: 80px;
+  }
+  
+  .featureCard {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+  }
+  
+  .cardInner, .cardInnerReverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .textColumn {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+}

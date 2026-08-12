@@ -1,15 +1,14 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import styles from './CTAAndBenefitsBanner.module.css';
+import { marqueeBenefits } from '@/data/home';
 
-const benefitsList = [
-  '30-days Risk-free Return',
-  '2 Year Warranty',
-  'Quick Assistant within 24h',
-  '24h Free Shipping',
+const fullMarqueeList = [
+  ...marqueeBenefits,
+  ...marqueeBenefits,
+  ...marqueeBenefits,
+  ...marqueeBenefits,
 ];
-
-const marqueeBenefits = [...benefitsList, ...benefitsList, ...benefitsList, ...benefitsList];
 
 export default function CTAAndBenefitsBanner({ hideBanner = false }: { hideBanner?: boolean }) {
   return (
@@ -58,7 +57,7 @@ export default function CTAAndBenefitsBanner({ hideBanner = false }: { hideBanne
       {/* Bottom Benefits Moving Marquee Strip */}
       <div className={styles.marqueeStrip}>
         <div className={styles.marqueeTrack}>
-          {marqueeBenefits.map((item, idx) => (
+          {fullMarqueeList.map((item, idx) => (
             <React.Fragment key={idx}>
               <span className={styles.benefitItem}>{item}</span>
               <span className={styles.bullet}>•</span>

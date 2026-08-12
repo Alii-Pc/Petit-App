@@ -1,0 +1,115 @@
+.section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  font-family: var(--font-outfit, sans-serif);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 500;
+  color: var(--color-headings, #494742);
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.marqueeWrapper {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+/* Gradient fade at the edges for a polished look */
+.marqueeWrapper::before,
+.marqueeWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.marqueeWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  /* Crucial: let the track take exactly the width of all items + margins */
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
+}
+
+/* Pause animation when user hovers */
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.awardItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* The margin acts as the gap. This guarantees exact 50% translation alignment */
+  margin-right: 80px; 
+}
+
+.awardImage {
+  object-fit: contain;
+  /* Optional: gives circular badges a gentle pop off the background */
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06));
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate exactly half the total width of the track */
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .title {
+    margin-bottom: 40px;
+  }
+  
+  .awardItem {
+    margin-right: 40px;
+  }
+  
+  .awardImage {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .marqueeWrapper::before,
+  .marqueeWrapper::after {
+    width: 50px;
+  }
+}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Syne } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
+import CartDrawer from "@/components/CartDrawer";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -24,7 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${syne.variable}`}>
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
+      </body>
     </html>
   );
 }
