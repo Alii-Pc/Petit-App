@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './FeatureCarousel.module.css';
+import FeatureDrawer from './FeatureDrawer';
 
 const carouselData = [
   {
@@ -34,15 +35,25 @@ const carouselData = [
 export default function FeatureCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [activeFeatureId, setActiveFeatureId] = useState<number | null>(null);
+
+  const openFeature = (id: number) => {
+    setActiveFeatureId(id);
+    setDrawerOpen(true);
+  };
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
-    const scrollPosition = scrollRef.current.scrollLeft;
-    const cardWidth = scrollRef.current.children[0]?.clientWidth || 320;
-    const gap = 24;
-    // Calculate which card is most visible
-    const newIndex = Math.round(scrollPosition / (cardWidth + gap));
-    setActiveIndex(newIndex);
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    
+    // Calculate total scrollable area
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+
+    // If we've scrolled past the halfway point, switch to the second dot
+    const isPastHalfway = scrollLeft / maxScroll > 0.4;
+    setActiveIndex(isPastHalfway ? 2 : 0);
   };
 
   const scrollTo = (index: number) => {
@@ -89,7 +100,11 @@ export default function FeatureCarousel() {
               {card.title}
             </h3>
 
-            <button className={styles.plusButton} aria-label="Learn more">
+            <button 
+              className={styles.plusButton} 
+              aria-label="Learn more"
+              onClick={() => openFeature(card.id)}
+            >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.plusIcon}>
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -100,15 +115,23 @@ export default function FeatureCarousel() {
       </div>
 
       <div className={styles.pagination}>
-        {carouselData.map((_, idx) => (
-          <button 
-            key={idx} 
-            className={`${styles.dot} ${idx === activeIndex ? styles.dotActive : ''}`}
-            onClick={() => scrollTo(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
+        <button 
+          className={`${styles.dot} ${activeIndex < 2 ? styles.dotActive : ''}`}
+          onClick={() => scrollTo(0)}
+          aria-label="Go to first set of features"
+        />
+        <button 
+          className={`${styles.dot} ${activeIndex >= 2 ? styles.dotActive : ''}`}
+          onClick={() => scrollTo(2)}
+          aria-label="Go to second set of features"
+        />
       </div>
+
+      <FeatureDrawer 
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        featureId={activeFeatureId}
+      />
     </section>
   );
 }
