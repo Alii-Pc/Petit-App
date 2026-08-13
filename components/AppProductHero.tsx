@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './AppProductHero.module.css';
 import { useCart } from '@/context/CartContext'; // assuming standard cart context if needed
 
@@ -23,7 +24,13 @@ export default function AppProductHero() {
   };
 
   return (
-    <section className={styles.heroSection}>
+    <motion.section 
+      className={styles.heroSection}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className={styles.container}>
         <div className={styles.heroGrid}>
 
@@ -196,6 +203,6 @@ export default function AppProductHero() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

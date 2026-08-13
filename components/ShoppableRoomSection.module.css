@@ -112,31 +112,35 @@
   transform: rotate(45deg);
 }
 
-/* Pulsing Ring Animation */
+/* Pulsing Ring Animation - Enhanced 3D Effect */
 .pulseRing {
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  animation: pulseRingAnim 2.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  animation: pulseRingAnim3D 2.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
   pointer-events: none;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
-@keyframes pulseRingAnim {
+@keyframes pulseRingAnim3D {
   0% {
-    transform: scale(0.7);
-    opacity: 0.9;
+    transform: scale(0.6);
+    opacity: 1;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.8);
   }
-  50% {
-    transform: scale(1.4);
-    opacity: 0.3;
+  60% {
+    transform: scale(1.6);
+    opacity: 0.2;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2);
   }
   100% {
-    transform: scale(1.8);
+    transform: scale(2.0);
     opacity: 0;
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0), 0 0 40px rgba(255, 255, 255, 0);
   }
 }
 

@@ -44,8 +44,8 @@ export default function Header() {
               <Image
                 src="/images/petit-logo.svg"
                 alt="Petit"
-                width={90}
-                height={37}
+                width={102}
+                height={42}
                 priority
               />
             </Link>

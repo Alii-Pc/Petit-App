@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from './ProductPage.module.css';
 import { Icon } from '@/components/ui/Icon';
 import IconStrip from '@/components/IconStrip';
@@ -57,7 +58,13 @@ export default function ProductPage() {
       {/* ═══════════════════════════════════════════════════
           SECTION 1: Product Hero (Gallery + Info)
       ═══════════════════════════════════════════════════ */}
-      <section className={styles.heroSection}>
+      <motion.section 
+        className={styles.heroSection}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className={styles.container}>
           <div className={styles.heroGrid}>
 
@@ -227,7 +234,7 @@ export default function ProductPage() {
 
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 2. Icon Strip */}
               <IconStrip />
@@ -241,7 +248,13 @@ export default function ProductPage() {
       {/* ═══════════════════════════════════════════════════
           SECTION 5: Feel Close Even When You're Apart
       ═══════════════════════════════════════════════════ */}
-      <div className={styles.benefitsSection}>
+      <motion.div 
+        className={styles.benefitsSection}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className={styles.benefitsHeader}>
           <p className={styles.benefitsEyebrow}>Feel Close</p>
           <h2 className={styles.benefitsTitle}>Even When You&apos;re Apart</h2>
@@ -346,7 +359,7 @@ export default function ProductPage() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* 6. Interactive 3D Room Section ("Designed for Peaceful Nights") */}
               <ShoppableRoomSection />
@@ -356,7 +369,13 @@ export default function ProductPage() {
       {/* ═══════════════════════════════════════════════════
           SECTION 7: Advanced Comparison Table
       ═══════════════════════════════════════════════════ */}
-      <div className={styles.heroSectionTable}>
+      <motion.div 
+        className={styles.heroSectionTable}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className={styles.badge}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -369,7 +388,7 @@ export default function ProductPage() {
         <p className={styles.subtitleTable}>
           Compare Petit Baby Monitor with standard monitors and discover what truly matters for your baby's safety and your peace of mind.
         </p>
-      </div>
+      </motion.div>
 
       <div className={styles.tableContainer}>
         <div className={styles.tableScroll}>
@@ -467,7 +486,13 @@ export default function ProductPage() {
       </div>
 
       {/* ===== SECTION 8: 98% of Parents Recommend ===== */}
-      <div className={styles.recommendSection}>
+      <motion.div 
+        className={styles.recommendSection}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7 }}
+      >
         <div className={styles.recommendImageWrap}>
           <Image
             src="/images/baby-camera-room.jpg"
@@ -482,7 +507,7 @@ export default function ProductPage() {
             </h2>
           </div>
         </div>
-      </div>
+      </motion.div>
 
     
       
